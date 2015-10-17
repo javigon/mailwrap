@@ -414,13 +414,13 @@ class MailWrap(Class('MVMailBundle')):
         editmenu = application.mainMenu().itemAtIndex_(2).submenu()
         editmenu.addItem_(NSMenuItem.separatorItem())
 
-        mask = NSCommandKeyMask
+        mask = NSCommandKeyMask | NSAlternateKeyMask
         editmenu.addItemWithTitle_action_keyEquivalent_('Fill Text',
             'fillText', '\\').setKeyEquivalentModifierMask_(mask)
 
-        mask = NSCommandKeyMask | NSAlternateKeyMask
+        mask = NSCommandKeyMask
         editmenu.addItemWithTitle_action_keyEquivalent_('Wrap Text',
-            'wrapText', '\\').setKeyEquivalentModifierMask_(mask)
+            'wrapText', "\\").setKeyEquivalentModifierMask_(mask)
 
         # Read our configuration settings if present. Otherwise, set the
         # correct default values.
