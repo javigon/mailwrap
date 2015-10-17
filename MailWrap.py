@@ -427,10 +427,10 @@ class MailWrap(Class('MVMailBundle')):
 
         defaults = NSUserDefaults.standardUserDefaults()
         defaults = defaults.dictionaryForKey_('MailWrap') or {}
-        ComposeViewController._fixAttribution = defaults.get('FixAttribution', True)
+        ComposeViewController._fixAttribution = defaults.get('FixAttribution', False)
         EditingMessageWebView._bulletLists = defaults.get('BulletLists', True)
         EditingMessageWebView._indentWidth = int(defaults.get('IndentWidth', 2))
-        EditingMessageWebView._wrapWidth = int(defaults.get('WrapWidth', 76))
+        EditingMessageWebView._wrapWidth = int(defaults.get('WrapWidth', 72))
 
         # Report the plugin name and version to the com.apple.mail log.
 
